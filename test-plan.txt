@@ -1,0 +1,45 @@
+Pretty simple user interface:
+
+1. make
+2. ./input | ./pc
+3. The program will then run infinitely until ctrl+c, which is handled by the program and executes fclose(stdin), immediately empties all queues to exit threads gracefulyl, and says 'Bye'. So on ctrl+c expect something like:
+
+
+blue 9
+	red 11
+		green 13
+blue 10
+^C
+STDIN CLOSED.
+Clearing queue...
+
+	red 13
+		green 21
+blue 12
+	red 17
+	red 19
+	red 23
+	red 29
+	red 31
+	red 37
+	red 41
+	red 43
+	red 47
+		green 34
+blue 15
+blue 18
+blue 20
+blue 21
+blue 24
+blue 25
+blue 27
+blue 30
+blue 33
+blue 35
+blue 36
+blue 39
+blue 40
+blue 42
+
+Bye.
+
